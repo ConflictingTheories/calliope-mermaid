@@ -1,6 +1,6 @@
 {
   "name": "calliope-mermaid",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Calliope Plugin for mermaid diagram support",
   "main": "dist/bundle.js",
   "scripts": {
