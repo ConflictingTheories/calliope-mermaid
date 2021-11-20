@@ -7,6 +7,8 @@ const config = {
   entry: './jsx/index.jsx',
   // Output
   output: {
+    library: 'calliope-mermaid',
+    libraryTarget: 'umd',
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
@@ -33,6 +35,12 @@ const config = {
         process: 'process/browser'
       })
   ],
+  externals: [
+    'react',
+    'react-dom',
+  ],
+  devtool: 'source-map',
+  mode: 'production',
 };
 // Exports
 module.exports = config;
