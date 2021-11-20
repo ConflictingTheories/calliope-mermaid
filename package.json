@@ -1,11 +1,18 @@
 {
   "name": "calliope-mermaid",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Calliope Plugin for mermaid diagram support",
-  "main": "jsx/index.jsx",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist",
+    "build": "./node_modules/.bin/webpack -p --mode production",
+    "compile": "npm run clean && cross-env NODE_ENV=production babel jsx --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,stories.js,__snapshots__"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "keywords": [
     "calliope",
     "mermaid",
@@ -18,17 +25,32 @@
   ],
   "homepage": "https://calliope.site",
   "repository": {
-    "url": "git+https://github.com/ConflictingTheories/calliope-mermaid.git",
+    "url": "https://github.com/ConflictingTheories/calliope-mermaid.git",
     "type": "git"
   },
   "author": "Kyle Derby MacInnis",
   "license": "ISC",
   "dependencies": {
-    "react-mermaid2": "^0.1.4"
+    "babel-loader": "^8.2.3",
+    "react-mermaid2": "^0.1.4",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/register": "^7.16.0",
+    "babel-register": "^6.26.0",
+    "cross-env": "^7.0.3",
     "react": "^17.0.2",
-    "react-recollect": "^5.2.3"
+    "react-dom": "^17.0.2",
+    "react-recollect": "^5.2.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0"
   },
   "peerDependencies": {
     "react": "^17.0.2",
